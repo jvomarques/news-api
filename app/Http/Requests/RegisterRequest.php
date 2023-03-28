@@ -23,23 +23,24 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|min:3|max:255',
+            'name' => ['required', 'string', 'min:3', 'max:255'],
             'email' => [
                 'required',
                 'email',
                 'max:255',
                 'unique:users'
             ],
+            'source_id' => 'required|exists:news_sources,id',
             'password' => [
                 'required',
                 'min:6',
                 'max:100',
             ],
         ];
-
     }
 
-    public function getData() {
+    public function getData()
+    {
         $data = $this->validated();
         $data['password'] = Hash::make($data['password']);
         return $data;

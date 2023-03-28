@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\NewsSource>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserPreference>
  */
-class NewsSourceFactory extends Factory
+class UserPreferenceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,9 +16,6 @@ class NewsSourceFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'url' => fake()->unique()->url(),
-            'api_key' => fake()->randomKey(),
-        ];
+
     }
 }

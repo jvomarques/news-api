@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreNewsSourceRequest extends FormRequest
+class UpdateUserPreferenceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,8 +22,7 @@ class StoreNewsSourceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => ['required', 'numeric'],
-            'source_id' => ['required', 'numeric'],
+            //
         ];
     }
 }

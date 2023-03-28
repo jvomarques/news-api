@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Models\UserPreference;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -23,9 +25,7 @@ class LoginController extends Controller
             ]);
         }
 
-        return response()->json([
-            'user' => $user,
-            'token' => $user->createToken('newsapp_api_token')->plainTextToken
-        ]);
+        $user['token'] = $user->createToken('news_api_token')->plainTextToken;
+        return UserResource::make($user);
     }
 }
