@@ -47,6 +47,6 @@ class User extends Authenticatable
      */
     public function userPreference(): HasOne
     {
-        return $this->hasOne(UserPreference::class);
+        return $this->hasOne(UserPreference::class)->with('newsSource');
     }
 }

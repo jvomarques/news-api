@@ -22,7 +22,6 @@ class RegisterController extends Controller
         $userPreference['source_id'] = $registerRequest->source_id;
         UserPreference::create($userPreference);
 
-
         $user['token'] = $user->createToken('news_api_token')->plainTextToken;
         return UserResource::make($user);
     }

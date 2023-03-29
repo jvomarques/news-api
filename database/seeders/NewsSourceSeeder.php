@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\NewsSource;
 use Database\Factories\NewsSourceFactory;
 use Illuminate\Database\Seeder;
 

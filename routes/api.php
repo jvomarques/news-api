@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\News\FeedController;
 use App\Http\Resources\UserResource;
 
 /*
@@ -24,6 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     return UserResource::make($user);
 });
+
+
+Route::middleware('auth:sanctum')->get('/feed', FeedController::class);
+
 
 Route::prefix('auth')->group(function () {
     Route::post('/login', LoginController::class);

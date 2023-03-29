@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\NewsSource;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class NewsSourceFactory extends Factory
 {
+
+    protected $model = NewsSource::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,8 +21,8 @@ class NewsSourceFactory extends Factory
     public function definition(): array
     {
         return [
-            'url' => fake()->unique()->url(),
-            'api_key' => fake()->randomKey(),
+            'url' => 'https://newsapi.org/v2/top-headlines',
+            'api_key' => '63ebb0b9556240169fc1c458fed8d8e2',
         ];
     }
 }

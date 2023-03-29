@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use App\Models\UserPreference;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
